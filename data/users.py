@@ -19,7 +19,8 @@ class User:
     mobile: str
     email: str | None
     date_of_birth: str | None
-    subject: List[Subject] | None
+    # subject: List[Subject] | None
+    subject: Subject | None
     hobbies: str | None
     image: str | None
     current_address: str | None
