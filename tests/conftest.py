@@ -5,7 +5,7 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-# from selene.support.shared import browser
+from selene.support.shared import browser
 # from selene import Browser, Config
 from selene import Config, browser
 
@@ -56,11 +56,11 @@ def browser_session(request):
 
     # browser = Browser(Config(driver))
 
-    browser.driver = driver
-    browser.base_url = "https://demoqa.com"
-    browser.timeout = 2.0
-    browser.window_width = 1920
-    browser.window_height = 1080
+    browser.config.driver = driver
+    browser.config.base_url = "https://demoqa.com"
+    browser.config.timeout = 2.0
+    browser.config.window_width = 1920
+    browser.config.window_height = 1080
 
     # browser.driver.base_url = "https://demoqa.com"
     # browser.driver.timeouts = 2.0
