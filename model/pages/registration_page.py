@@ -19,12 +19,12 @@ class RegistrationPage:
     # @staticmethod
     def open(self):
         with allure.step("Открываем главную страницу"):
-            self.browser.open("/automation-practice-form").wait_until(
-                have.title("DEMOQA")
-            )
-            # self.browser.open("https://demoqa.com/automation-practice-form").wait_until(
+            # self.browser.open("/automation-practice-form").wait_until(
             #     have.title("DEMOQA")
             # )
+            self.browser.open("https://demoqa.com/automation-practice-form").wait_until(
+                have.title("DEMOQA")
+            )
 
     def form_filling(self, user: User):
         with allure.step("Заполняем и отправляем форму"):

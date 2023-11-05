@@ -58,7 +58,7 @@ def browser_session(request):
     # browser.config.window_width = 1920
     # browser.config.window_height = 1080
 
-    browser.driver.base_url = "https://demoqa.com"
+    # browser.driver.base_url = "https://demoqa.com"
     browser.driver.timeouts = 2.0
     browser.driver.window_width = 1920
     browser.driver.window_height = 1080
