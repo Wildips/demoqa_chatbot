@@ -22,6 +22,9 @@ class RegistrationPage:
             # self.browser.open("/automation-practice-form").wait_until(
             #     have.title("DEMOQA")
             # )
+            self.browser.driver.timeout = 2.0
+            self.browser.driver.window_width = 1920
+            self.browser.driver.window_height = 1080
             self.browser.open("https://demoqa.com/automation-practice-form").wait_until(
                 have.title("DEMOQA")
             )
