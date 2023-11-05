@@ -42,13 +42,17 @@ def browser_binding(request):
     login = os.getenv("LOGIN")
     password = os.getenv("PASSWORD")
 
+    print(login)
+    print(password)
+
     driver = webdriver.Remote(
-        command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
+        # command_executor=f"https://{login}:{password}@selenoid.autotests.cloud/wd/hub",
+        command_executor=f"https://user1:1234@selenoid.autotests.cloud/wd/hub",
         options=options,
     )
     # !!!!
-    # browser.config.driver = driver
-    browser = Browser(Config(driver))
+    browser.config.driver = driver
+    # browser = Browser(Config(driver))
 
     browser.config.base_url = "https://demoqa.com"
     browser.config.timeout = 2.0
