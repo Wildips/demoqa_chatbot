@@ -1,11 +1,11 @@
-import resource
-
+import allure
 from selene import have, command
 
 # from selene.support.shared import browser
-from data.users import User
-import allure
 
+import resource
+from data.users import User
+from utils.log_extending import step
 
 class RegistrationPage:
     def __init__(self, browser):
@@ -17,6 +17,7 @@ class RegistrationPage:
         ...
 
     # @staticmethod
+    @step
     def open(self):
         with allure.step("Открываем главную страницу"):
             self.browser.open("/automation-practice-form").wait_until(
@@ -29,6 +30,7 @@ class RegistrationPage:
             #     have.title("DEMOQA")
             # )
 
+    @step
     def form_filling(self, user: User):
         with allure.step("Заполняем и отправляем форму"):
             self.first_name.type(user.first_name)
@@ -84,6 +86,7 @@ class RegistrationPage:
             self.browser.element('[id="submit"]').perform(command.js.click)
 
     # @staticmethod
+    @step
     def should_registered_user_with(self, user: User):
         with allure.step("Проверяем соответствие введенных данных полученным"):
             self.browser.element(
